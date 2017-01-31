@@ -11,7 +11,7 @@
 window.onbeforeunload=function(){return false};
 MktoForms2.loadForm("//marketo.tibco.com", "221-BCQ-142", 3221, function(form){
 	form.onSuccess(function(a,b){
-		jquery("#mktoForm_3221").hide();
+		jQuery("#mktoForm_3221").hide();
 		jQuery("#thankyou").html("Thank You For Contacting Us");
 		jQuery("#thankyou1").html("We will get back to you soon.");
 		console.log(a);
