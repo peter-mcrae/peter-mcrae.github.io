@@ -24,7 +24,7 @@
 <script>
 MktoForms2.loadForm("//marketo.tibco.com", "221-BCQ-142", 3221, function(form){
 	form.onSuccess(function(a,b){
-		jQuery("#mktoForm_3221").remove();
+		jQuery("#mktoForm_3221,#intro").remove();
 		jQuery("#thankyou1").html("Thank you. Your message has been received and we’ll get back to you soon.");
 		
 		return false;
