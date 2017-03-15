@@ -20,198 +20,410 @@
 		border:#F37306 !important;
 		background-image: !important;
 	}*/
-	// Dirty CSS: quick fix to maintain consistency on padding
-
-h4 { padding-top: $standard-spacing*0.5; }
-
-.related-products-solutions {
-  h4 {
-    margin-bottom: 5px;
-    &:first-child:before {
-      
-    }
-  }
-  ul {
-    display: block;
-    margin-left: 0;
-    margin-bottom: $standard-spacing*2;
-    &:last-child {
-      margin-bottom: $standard-spacing*2;
-    }
-  }
-  li {
-    font-size: 14px;
-    list-style: none;
-    float: left;
-    font-weight: 500;
-    background-color: #f4f4f4;
-    margin-right: $standard-spacing*0.5;
-    display: block;
-    a {
-      height: 100%;
-      width: 100%;
-      padding: $standard-spacing*0.25 $standard-spacing*0.5;
-      display: block;
-      font-weight: 500;
-      &:hover {
-        text-decoration: none;
-        background-color: #E3F6FA;
-        
-      }
-    }
-  }
+	
+	@charset "UTF-8";
+* {
+  font-size: 100%;
+  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
 }
 
-.page-info {
-  @media only screen and (min-width: 40em) and (max-width: 64em) {
-    padding: 0 $standard-spacing;
-  }
-}
-
-
-
-
-
-.form-container {
-  padding: $standard-spacing $standard-spacing*1.5 $standard-spacing*0.5;
-  background-color: #f4f4f4;
+html,
+body {
+  font-size: 16px;
   color: #333;
-  
-  .reveal-modal & {
-    padding: $standard-spacing*2 0 0;
-    input, select {
-      border: 1px solid #e8e8e8;
-      border-bottom: 2px solid #b5b5b5;
-    }
+  margin: 0px;
+}
+
+a {
+  color: #00a9d7;
+}
+a:hover {
+  color: #0887a9;
+  text-decoration: underline;
+}
+
+button {
+  background-color: #00a9d7;
+  color: white;
+  display: inline-block;
+  font-family: "Gotham Ssm A", "Gotham Ssm B", sans-serif;
+  font-weight: 400;
+  padding: 0.875rem 1.125rem;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.005rem;
+}
+button.button-icon {
+  padding-right: 40px;
+}
+button.button-icon [class^="icon-"], button.button-icon [class*=" icon-"] {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  position: absolute;
+  top: 10px;
+}
+@media only screen and (max-width: 64em) {
+  .pagenav button {
+    padding: 0.6rem 1rem;
   }
-  label, label.error { 
-    color: #333;
+}
+button.flat-button {
+  background: none;
+  color: #00a9d7;
+  text-transform: none;
+}
+button.flat-button :hover {
+  color: #0887a9;
+}
+@media only screen and (max-width: 40em) {
+  .form-container button.flat-button {
+    margin-top: 0;
   }
-  &.color-form {
-    background-color: #263a50;
-    &, label, label.error { 
-      color: white;
-      font-weight: 300;
-    }
-    a {
-      color: #00a9d7;
-    }
-    .error .msg {
-      color: #ff7e74;
-    }
+}
+button.arrow-button:after {
+  content: '»';
+  font-size: 0.95rem;
+  position: relative;
+  margin-left: 7px;
+}
+
+h1, h2, h3, h4, h5, h6, .pagenav {
+  font-family: "Gotham A", "Gotham B", sans-serif;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.4;
+  letter-spacing: 0.025rem;
+  margin: 0px;
+  margin-bottom: 0.5rem;
+}
+@media only screen and (max-width: 40em) {
+  h1, h2, h3, h4, h5, h6, .pagenav {
+    line-height: 1.2;
   }
-  input,
-  select {
-    margin: 0.3rem 0 1.5rem;
-    border: 0;
-    border-bottom: 2px solid #b5b5b5;
+}
+h1.subhead, h2.subhead, h3.subhead, h4.subhead, h5.subhead, h6.subhead, .pagenav.subhead {
+  font-weight: 400;
+}
+
+h1, h2 {
+  font-size: 1.74rem;
+  margin-bottom: 0.75rem;
+}
+@media only screen and (max-width: 40em) {
+  h1, h2 {
+    font-size: 1.5rem;
   }
-  input:focus, select:focus {
-      border-bottom: 3px solid #00a9d7;
-      outline: none;
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      box-shadow: none;
-      background-color: white;
+}
+h1.subhead, h2.subhead {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+@media only screen and (max-width: 40em) {
+  h1.subhead, h2.subhead {
+    font-size: 1.2rem;
+    line-height: 1.35;
   }
-  .error {
-    input {
-      background-color: #ffede9;
-      border-bottom: 2px solid #f7323f;
-      margin-bottom: 0.2rem;
-    }
-    .msg {
-      color: #f7323f;
-      margin-bottom: 0.1rem;
-      display: block;
-      text-align: right;
-      font-weight: 400;
-      .icon-exclamation-circle {
-        padding-right: 5px;
-      }
-    }
-  }
-  
-  .head-container {
-    margin-bottom: $standard-spacing;
-    .form-header {
-      // same style as standard H4
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-    }
-    .instruction {
-      font-size: 1.125rem;
-    }
-  }
-  .fields-container {
-    margin-bottom: $standard-spacing*0.5;
-    .columns {
-      padding: 0;
-    }
-  }
-  label,
-  select {
-    font-family: $gotham_smart;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h3, h4 {
+  margin-bottom: 20px;
+}
+
+p, li {
+  font-family: "Whitney SSm A", "Whitney SSm B", sans-serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.62;
+  letter-spacing: 0.005rem;
+  margin-bottom: 1rem;
+}
+@media only screen and (max-width: 40em) {
+  p, li {
     font-weight: 400;
   }
-  .optional {
-    font-family: $gotham_smart;
-    font-style: italic;
-    font-weight: 300;
+}
+p strong, li strong {
+  font-weight: 400;
+}
+@media only screen and (max-width: 40em) {
+  p strong, li strong {
+    font-weight: 600;
   }
-  
-  .submit {
-    margin-top: $standard-spacing;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+@media only screen and (max-width: 40em) {
+  li {
+    line-height: 1.58;
   }
-  @media only screen and (max-width: 40em) {
-    margin-top: $standard-spacing*0.5;
-    button {
-      width: 100%;
-      &.flat-button {
-        padding: 0;
-      }
-    }
+}
+
+.pagenav {
+  z-index: 100;
+  height: 100%;
+  width: 312px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+  padding: 2rem;
+}
+.pagenav p {
+  color: white;
+}
+.pagenav .page-title {
+  font-weight: 300;
+  position: absolute;
+  margin: 0px;
+  color: white;
+  bottom: 290px;
+}
+.pagenav .cta {
+  margin: auto;
+  min-width: 100%;
+  position: relative;
+}
+.product .pagenav .cta {
+  top: 392px;
+}
+.advanced .pagenav .cta {
+  top: 292px;
+}
+.pagenav .banner-nav-links {
+  position: absolute;
+  list-style: none;
+  margin-left: 0px;
+}
+.product .pagenav .banner-nav-links {
+  top: 230px;
+}
+.advanced .pagenav .banner-nav-links {
+  top: 130px;
+}
+.pagenav .banner-nav-links a {
+  color: white;
+  font-family: "Gotham SSm A", "Gotham Ssm B", sans-serif;
+}
+.pagenav .banner-nav-links a:hover {
+  text-decoration: none;
+}
+.pagenav .banner-nav-links a:after {
+  content: '»';
+  font-size: 0.95rem;
+  position: relative;
+}
+@media only screen and (max-width: 64em) {
+  .pagenav {
+    width: 100%;
+    height: 46px;
+    padding: 0 2rem;
+    position: relative;
+    top: 0px;
   }
-  
-  
+  .pagenav .page-title {
+    font-size: 1rem;
+    line-height: 22px;
+    top: 12px;
+  }
+  .pagenav .cta, .pagenav .banner-nav-links {
+    display: none;
+  }
+}
+
+.template-title {
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid red;
+  color: red;
+  padding: 50px 0px 20px;
+  margin-bottom: 50px;
+}
+
+h4 {
+  padding-top: 1rem;
+}
+
+.related-products-solutions h4 {
+  margin-bottom: 5px;
+}
+.related-products-solutions ul {
+  display: block;
+  margin-left: 0;
+  margin-bottom: 4rem;
+}
+.related-products-solutions ul:last-child {
+  margin-bottom: 4rem;
+}
+.related-products-solutions li {
+  font-size: 14px;
+  list-style: none;
+  float: left;
+  font-weight: 500;
+  background-color: #f4f4f4;
+  margin-right: 1rem;
+  display: block;
+}
+.related-products-solutions li a {
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  display: block;
+  font-weight: 500;
+}
+.related-products-solutions li a:hover {
+  text-decoration: none;
+  background-color: #E3F6FA;
+}
+
+@media only screen and (min-width: 40em) and (max-width: 64em) {
+  .page-info {
+    padding: 0 2rem;
+  }
+}
+
+.form-container {
+  padding: 2rem 3rem 1rem;
+  background-color: #f4f4f4;
+  color: #333;
+}
+.reveal-modal .form-container {
+  padding: 4rem 0 0;
+}
+.reveal-modal .form-container input, .reveal-modal .form-container select {
+  border: 1px solid #e8e8e8;
+  border-bottom: 2px solid #b5b5b5;
+}
+.form-container label, .form-container label.error {
+  color: #333;
+}
+.form-container.color-form {
+  background-color: #263a50;
+}
+.form-container.color-form, .form-container.color-form label, .form-container.color-form label.error {
+  color: white;
+  font-weight: 300;
+}
+.form-container.color-form a {
+  color: #00a9d7;
+}
+.form-container.color-form .error .msg {
+  color: #ff7e74;
+}
+.form-container input,
+.form-container select {
+  margin: 0.3rem 0 1.5rem;
+  border: 0;
+  border-bottom: 2px solid #b5b5b5;
+}
+.form-container input:focus, .form-container select:focus {
+  border-bottom: 3px solid #00a9d7;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: white;
+}
+.form-container .error input {
+  background-color: #ffede9;
+  border-bottom: 2px solid #f7323f;
+  margin-bottom: 0.2rem;
+}
+.form-container .error .msg {
+  color: #f7323f;
+  margin-bottom: 0.1rem;
+  display: block;
+  text-align: right;
+  font-weight: 400;
+}
+.form-container .error .msg .icon-exclamation-circle {
+  padding-right: 5px;
+}
+.form-container .head-container {
+  margin-bottom: 2rem;
+}
+.form-container .head-container .form-header {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+.form-container .head-container .instruction {
+  font-size: 1.125rem;
+}
+.form-container .fields-container {
+  margin-bottom: 1rem;
+}
+.form-container .fields-container .columns {
+  padding: 0;
+}
+.form-container label,
+.form-container select {
+  font-family: "Gotham SSm A", "Gotham Ssm B", sans-serif;
+  font-weight: 400;
+}
+.form-container .optional {
+  font-family: "Gotham SSm A", "Gotham Ssm B", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+}
+.form-container .submit {
+  margin-top: 2rem;
+}
+@media only screen and (max-width: 40em) {
+  .form-container {
+    margin-top: 1rem;
+  }
+  .form-container button {
+    width: 100%;
+  }
+  .form-container button.flat-button {
+    padding: 0;
+  }
 }
 
 .reveal-modal, dialog {
   box-shadow: none;
   padding: 0;
-  .form-container {
-    background: white;
-  } 
+}
+.reveal-modal .form-container, dialog .form-container {
+  background: white;
 }
 
 .fake-modal-overlay {
-  background-color: rgba(0, 0, 0, .85);
-  padding: $standard-spacing*2;
-  
-  .close-button:before {
-    position: relative;
-    display: block;
-    float: right;
-    top: -$standard-spacing*0.5;
-    right: -$standard-spacing;
-    font-size: 2.5rem;
-    font-weight: 300;
-    content: "\00d7";
-    line-height: 0.5;
-    font-family: $gotham;
-    color: #333;
-  }
-  .close-button:hover:before {
-    color: $link_hover_color;
-  }
-  
-  @media only screen and (max-width: 40em) {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 4rem;
+}
+.fake-modal-overlay .close-button:before {
+  position: relative;
+  display: block;
+  float: right;
+  top: -1rem;
+  right: -2rem;
+  font-size: 2.5rem;
+  font-weight: 300;
+  content: "\00d7";
+  line-height: 0.5;
+  font-family: "Gotham A", "Gotham B", sans-serif;
+  color: #333;
+}
+.fake-modal-overlay .close-button:hover:before {
+  color: #0887a9;
+}
+@media only screen and (max-width: 40em) {
+  .fake-modal-overlay {
     padding: 0;
-    .form-container {
-      margin-top: 0;
-    }
+  }
+  .fake-modal-overlay .form-container {
+    margin-top: 0;
   }
 }
+
 
 </style>
 <link rel="stylesheet" type="text/css" href="https://www.tibco.com/sites/default/files/fonts/551417/805C156756F6D3387.css"> </link>
