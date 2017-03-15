@@ -53,6 +53,19 @@ button {
   line-height: 1;
   letter-spacing: 0.005rem;
 }
+
+#submitButton {
+  background-color: #00a9d7;
+  color: white;
+  display: inline-block;
+  font-family: "Gotham Ssm A", "Gotham Ssm B", sans-serif;
+  font-weight: 400;
+  padding: 0.875rem 1.125rem;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.005rem;
+}
+
 button.button-icon {
   padding-right: 40px;
 }
@@ -290,7 +303,7 @@ h4 {
 }
 
 .form-container {
-  padding: 2rem 0rem 1rem;
+  padding: 0rem 0rem 0rem;
   background-color: #f4f4f4;
   color: #333;
 }
@@ -441,7 +454,8 @@ h4 {
 <div class="form-container" ><form id="mktoForm_3221"></form></div>
 <script>
 MktoForms2.loadForm("//marketo.tibco.com", "221-BCQ-142", 3221, function(form){
-	jQuery(".mktoBlueBox").css("margin-left","40%");
+	//jQuery(".mktoBlueBox").css("margin-left","40%");
+	jQuery("button").attr('id','submitButton');
 	form.onSuccess(function(a,b){
 		jQuery("#mktoForm_3221,#intro").remove();
 		jQuery("#thankyou").html("Thank you. Your message has been received and we’ll get back to you soon.");
